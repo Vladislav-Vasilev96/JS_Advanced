@@ -1,0 +1,14 @@
+function add(n) {
+    const inner = function (a) {
+        n += a;
+        return inner;
+    };
+    inner.valueOf = function () {
+        return n;
+    };
+    return inner
+}
+
+
+console.log (Number(add(1)))
+console.log(`${add(1)(6)(-3)}`)
